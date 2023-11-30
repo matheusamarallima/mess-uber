@@ -5,6 +5,7 @@ import com.lima.emailservice.core.EmailSenderUseCase;
 import com.lima.emailservice.exception.EmailServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 public class EmailSenderService implements EmailSenderUseCase {
 
     private final EmailSenderGateway emailSenderGateway;
@@ -15,7 +16,9 @@ public class EmailSenderService implements EmailSenderUseCase {
     }
 
     @Override
-    public void sendEmail(String to, String subject, String body) throws EmailServiceException {
+    public void sendEmail(String to, String subject, String body){
         this.emailSenderGateway.sendEmail(to, subject, body);
     }
+
+
 }

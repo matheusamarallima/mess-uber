@@ -1,6 +1,6 @@
 package com.lima.emailservice.exception;
 
-public class EmailServiceException extends Exception{
+public class EmailServiceException extends RuntimeException{
     public EmailServiceException(String message){
         super(message);
     }
