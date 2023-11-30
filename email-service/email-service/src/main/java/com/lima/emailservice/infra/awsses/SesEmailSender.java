@@ -6,15 +6,20 @@ import com.amazonaws.services.simpleemail.model.*;
 import com.lima.emailservice.adapters.EmailSenderGateway;
 import com.lima.emailservice.exception.EmailServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SesEmailSender implements EmailSenderGateway {
+
 
     private final AmazonSimpleEmailService amazonSimpleEmailService;
 
     @Autowired
-    public SesEmailSender(AmazonSimpleEmailService amazonSimpleEmailService){
-        this.amazonSimpleEmailService = amazonSimpleEmailService;
+    public SesEmailSender(AmazonSimpleEmailService sesClient) {
+        this.amazonSimpleEmailService = sesClient;
     }
+
+
     @Override
     public void sendEmail(String to, String subject, String body) throws EmailServiceException {
         SendEmailRequest request = new SendEmailRequest()
