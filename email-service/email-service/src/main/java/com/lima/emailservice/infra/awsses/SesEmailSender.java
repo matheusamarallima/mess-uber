@@ -18,7 +18,7 @@ public class SesEmailSender implements EmailSenderGateway {
     @Override
     public void sendEmail(String to, String subject, String body) throws EmailServiceException {
         SendEmailRequest request = new SendEmailRequest()
-                .withSource("matheus@gmail.com")
+                .withSource("matheus_amrl@hotmail.com")
                 .withDestination(new Destination().withToAddresses(to))
                 .withMessage(new Message().withSubject(new Content(subject))
                         .withBody(new Body().withText(new Content(body))));

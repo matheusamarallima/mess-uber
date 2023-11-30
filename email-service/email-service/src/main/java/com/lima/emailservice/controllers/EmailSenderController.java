@@ -2,6 +2,7 @@ package com.lima.emailservice.controllers;
 
 
 import com.lima.emailservice.application.EmailSenderService;
+import com.lima.emailservice.core.EmailRequest;
 import com.lima.emailservice.exception.EmailServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
